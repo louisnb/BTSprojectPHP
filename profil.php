@@ -33,7 +33,6 @@
 
                 $_SESSION['mail'] = $email; 
                 $_SESSION['mdp'] = $motDePasse;
-
             }
     else
     {
@@ -48,13 +47,16 @@
         $conn = new PDO("mysql:host=$servername;dbname=ping", $username, $password);
         $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sth = $conn->prepare("SELECT * FROM adherants WHERE mail = '$email' AND mdp = '$motDePasse'");
+        $sth = $conn->prepare("SELECT * FROM adherents WHERE mail = '$email' AND mdp = '$motDePasse'");
         $sth -> execute();
         $result = $sth -> fetch();
 
         if($result == NULL && $email != NULL && $motDePasse != NULL)
         {
             echo "Identifiant ou mot de passe incorrect";
+            echo "<br>";
+            echo "<br>";
+            echo "Veuillez-vous <a href='./connexion.php'>reconnecter</a>";
         }
     }
     

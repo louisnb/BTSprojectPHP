@@ -30,7 +30,7 @@
 
                 <div class="sign">
                     <label for="password">Entrez votre mot de passe</label>
-                    <input type="password" id="mdp" name="motDePasse" placeholder="*********" required>
+                    <input type="password" id="mdp" name="motDePasse" placeholder="*********">
                 </div>
 
                 <div class="submit">

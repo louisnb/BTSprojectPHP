@@ -34,8 +34,8 @@ use Slim\Factory\AppFactory;
 require __DIR__ . '../vendor/autoload.php';
 
 $app = AppFactory::create();
-$app->addErrorMiddleware(true, true, true);
-$app->setBasePath("/project_folder/api");
+$app->addErrorMiddleware(true, true, true);        //voir https://stackoverflow.com/questions/66765568/fatal-error-uncaught-slim-exception-httpnotfoundexception-in-slim-4-7
+$app->setBasePath("/project_folder/api");          //
 
 $app->get('/', function (Request $request, Response $response, $args) {
     $response->getBody()->write("Hello world!");

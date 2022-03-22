@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="./index.php">Accueil</a></li>
                 <li><a href="./inscription.php">Inscription/ Connexion</a></li>
                 <li><a href="./competitions.php">Competitions</a></li>
             </ul>

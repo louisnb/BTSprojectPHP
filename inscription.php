@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="./index.php">Accueil</a></li>
                 <li><a href="./inscription.php">Inscription/ Connexion</a></li>
                 <li><a href="./competitions.php">Competitions</a></li>
             </ul>
@@ -104,17 +104,17 @@
             $conn = new PDO("mysql:host=$servername;dbname=ping", $username, $password);
             $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sth = $conn->prepare("SELECT COUNT(DISTINCT id) FROM adherants");
+            $sth = $conn->prepare("SELECT COUNT(DISTINCT id) FROM adherents");
             $sth -> execute();
             $resultCount = $sth -> fetch();
 
-            $nbrAdherants = $resultCount['0'];
+            $nbrAdherents = $resultCount['0'];
 
             
-            $sth = $conn -> prepare("ALTER TABLE adherants AUTO_INCREMENT = $nbrAdherants");
+            $sth = $conn -> prepare("ALTER TABLE adherents AUTO_INCREMENT = $nbrAdherents");
             $sth -> execute();
         
-            $sth = $conn->prepare("INSERT INTO adherants VALUES(:id, :nom, :prenom, :adresse, :codePostal, :ville, :mail, :mdp)");
+            $sth = $conn->prepare("INSERT INTO adherents VALUES(:id, :nom, :prenom, :adresse, :codePostal, :ville, :mail, :mdp)");
 
             $sth -> bindParam(':id', $id);
             $sth -> bindParam(':nom', $nom);
@@ -128,7 +128,7 @@
         }
 
         catch(PDOException $e){
-           echo "Erreur : " . $e->getMessage();
+           //echo "Erreur : " . $e->getMessage();
         }
 
     ?>
