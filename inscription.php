@@ -40,7 +40,7 @@
 
                 <div class="sign">
                     <label for="code postal">Entrez votre code postal</label>
-                    <input type="CP" id="codePostal" name="codePostal" placeholder="34000" required>
+                    <input type="number" id="codePostal" name="codePostal" placeholder="34000" required>
                 </div>
 
                 <div class="sign">

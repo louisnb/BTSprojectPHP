@@ -22,7 +22,7 @@
     <main>
     <h2>Page d'Administration</h2>
         <section>
-            <form method="post" action="./profil.php">
+            <form method="post" action="./profilAdmin.php">
             <div class="sign">
                     <label for="email">Entrez votre adresse e-mail</label>
                     <input type="email" id="mail" name="mail" placeholder="pierre.smith@example.com" required>
